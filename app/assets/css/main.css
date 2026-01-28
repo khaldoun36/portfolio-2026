@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* assets/css/main.css */
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/font/MonaSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 300 700;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans:
+    "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#__nuxt,
+body {
+  color: var(--color-zinc-500);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-zinc-800);
+}
+
+.full-width {
+  width: 100dvw; /* dynamic viewport width - excludes scrollbar */
+  margin-inline: calc(50% - 50dvw);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility top-padding {
+  @apply pt-20 md:pt-24 xl:pt-28;
+}
+
+@utility within-padding {
+  @apply pt-10 md:pt-12 xl:pt-14;
+}
+
+@utility my-outline {
+  @apply shadow-xs outline outline-zinc-950/10;
+}

@@ -2,6 +2,9 @@
   <div>
     <HeroSection />
     <ImageReel />
+    <section class="top-padding grid lg:grid-cols-2">
+      <PostsCollection />
+    </section>
   </div>
 </template>
 

@@ -4,6 +4,7 @@
   >
     <NuxtRouteAnnouncer />
     <NuxtPage />
+    <PrimaryFooter />
   </div>
 </template>
 

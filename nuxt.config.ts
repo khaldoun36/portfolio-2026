@@ -8,4 +8,11 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ["./app/assets/css/main.css"],
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"], // Ensure entry point is prerendered to start crawling
+    },
+  },
 });

@@ -1,10 +1,11 @@
 <template>
-  <div class="posts flex flex-col items-start">
+  <div v-if="posts" class="flex flex-col items-start">
     <div v-for="(post, index) in posts" :key="post.id">
       <PostPreview
         :title="post.title"
         :description="post.description"
         :date="post.date"
+        :reading-minutes="post.readingMinutes"
       />
       <div
         v-if="index !== posts.length - 1"
@@ -15,27 +16,21 @@
 </template>
 
 <script setup>
-  const posts = [
-    {
-      id: 1,
-      title: "The Future of Nuxt",
-      description:
-        "Exploring the new features in Nuxt 4 and what they mean for developers.",
-      date: new Date("2025-01-15"),
-    },
-    {
-      id: 2,
-      title: "Vue 3.5 Reactivity",
-      description:
-        "A deep dive into the new reactivity system and props destructuring syntax.",
-      date: new Date("2024-12-10"),
-    },
-    {
-      id: 3,
-      title: "Mastering Tailwind",
-      description:
-        "Tips and tricks for building beautiful, responsive layouts quickly.",
-      date: new Date("2024-11-28"),
-    },
-  ];
+  // 1. Fetch content from the 'blog' collection
+  const { data: posts } = await useAsyncData("blog-home", async () => {
+    const allPosts = await queryCollection("blog")
+      .order("date", "DESC") // Sort by newest first
+      .select("path", "title", "description", "date", "readingMinutes") // Only fetch needed fields
+      .all();
+
+    // 2. Transform the raw data to match your child component's props
+    return allPosts.map((post) => ({
+      id: post.path, // Use the path as a unique ID
+      title: post.title,
+      description: post.description,
+      date: new Date(post.date), // Convert string to Date object
+      path: post.path, // Useful if you want to link to the post later
+      readingMinutes: post.readingMinutes,
+    }));
+  });
 </script>

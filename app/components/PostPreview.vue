@@ -34,7 +34,7 @@
     title = "Hello title",
     description = "Hello description",
     date = new Date(),
-    readingMinutes = 5,
+    readingMinutes = 2,
   } = defineProps({
     title: String,
     description: String,

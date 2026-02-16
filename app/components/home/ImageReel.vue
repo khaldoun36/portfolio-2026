@@ -1,8 +1,8 @@
 <template>
-  <section style="user-select: none">
+  <section>
     <div
       ref="containerRef"
-      class="scroll-container full-width flex snap-x snap-mandatory gap-8 overflow-x-scroll scroll-smooth py-8"
+      class="scroll-container full-width within-padding flex snap-x snap-mandatory gap-8 overflow-x-scroll scroll-smooth"
     >
       <NuxtImg
         v-for="image in images"
@@ -14,7 +14,7 @@
       />
     </div>
 
-    <div class="hidden gap-4 xl:flex">
+    <div class="mt-4 hidden gap-4 xl:flex">
       <button
         class="button-link relative isolate flex size-11 items-center justify-center rounded-lg transition-transform"
         @click="scroll(-372)"
@@ -63,15 +63,12 @@
 
     /* 2. Tell the container to SNAP at this offset, not at 0px */
     scroll-padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
   }
 
   .card-item:first-child {
     /* 3. Push the first card physically to that offset */
     margin-left: var(--site-padding);
-  }
-  .card-item:last-child {
-    /* 3. Push the last card physically to that offset */
-    margin-right: var(--site-padding);
   }
 
   /* Update variable for larger breakpoints */

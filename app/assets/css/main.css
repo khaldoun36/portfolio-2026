@@ -59,17 +59,25 @@ h6 {
 /* --- Utilities --- */
 
 .full-width {
-  width: 100dvw;
-  margin-inline: calc(50% - 50dvw);
-  scrollbar-width: none;
+  /* Use standard vw for the calculation to improve Safari stability */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  /* Hide scrollbars */
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
+/* Specific Webkit override for Safari/Chrome */
+.full-width::-webkit-scrollbar,
 .full-width > div::-webkit-scrollbar {
-  display: none;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 @utility top-padding {

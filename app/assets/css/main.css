@@ -68,6 +68,10 @@ h6 {
   }
 }
 
+.full-width > div::-webkit-scrollbar {
+  display: none;
+}
+
 @utility top-padding {
   @apply pt-20 md:pt-24 xl:pt-28;
 }
@@ -78,4 +82,7 @@ h6 {
 
 @utility my-outline {
   @apply shadow-xs outline outline-zinc-950/10;
+}
+@utility my-border {
+  @apply border border-zinc-950/10 shadow-xs;
 }

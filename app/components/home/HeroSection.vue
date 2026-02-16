@@ -25,12 +25,12 @@
         :to="item.href"
         target="_blank"
         :aria-label="`${item.label} opens in new tab`"
-        class="social-link relative isolate flex size-11 items-center justify-center rounded-lg transition-transform"
+        class="button-link relative isolate flex size-11 items-center justify-center rounded-lg transition-transform"
       >
         <Icon
           :name="item.icon"
           size="24px"
-          class="relative z-10 text-zinc-500"
+          class="relative z-10 text-zinc-600"
           aria-hidden="true"
         />
       </NuxtLink>
@@ -60,20 +60,20 @@
   ];
 </script>
 
-<style scoped>
+<style>
   @reference "tailwindcss";
 
-  .social-link::after {
+  .button-link::after {
     @apply absolute inset-0 h-full w-full rounded-lg border border-zinc-950/10 bg-zinc-50 transition-all content-[''];
   }
 
   @media (hover: hover) {
-    .social-link:hover {
+    .button-link:hover {
       @apply -translate-y-0.5 shadow-xs;
     }
   }
 
-  .social-link:hover:active {
+  .button-link:hover:active {
     @apply translate-y-0 scale-98;
   }
 </style>

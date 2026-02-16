@@ -2,7 +2,7 @@
   <section>
     <div
       ref="containerRef"
-      class="scroll-container full-width within-padding flex snap-x snap-mandatory gap-8 overflow-x-scroll scroll-smooth"
+      class="scroll-container full-width within-padding flex snap-x snap-mandatory gap-6 overflow-x-scroll scroll-smooth"
     >
       <NuxtImg
         v-for="image in images"

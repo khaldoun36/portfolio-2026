@@ -42,10 +42,10 @@
 <script setup>
   import image_1 from "/assets/image-reel/image-reel-1.jpg";
   import image_2 from "/assets/image-reel/image-reel-2.jpg";
-  import image_3 from "/assets/image-reel/image-reel-3.jpg";
-  import image_4 from "/assets/image-reel/image-reel-4.jpg";
-  import image_5 from "/assets/image-reel/image-reel-5.jpg";
-  import image_6 from "/assets/image-reel/image-reel-6.jpg";
+  import image_3 from "/assets/image-reel/image-reel-3.JPG";
+  import image_4 from "/assets/image-reel/image-reel-4.JPG";
+  import image_5 from "/assets/image-reel/image-reel-5.JPG";
+  import image_6 from "/assets/image-reel/image-reel-6.JPG";
 
   const containerRef = ref(null);
 

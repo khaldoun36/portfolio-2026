@@ -1,25 +1,48 @@
 @import "tailwindcss";
 
-/* assets/css/main.css */
+/* --- Typography Setup --- */
 
 @font-face {
-  font-family: "Mona Sans";
-  src: url("/font/MonaSans-VariableFont_wdth,wght.ttf") format("truetype");
-  font-weight: 300 700;
-  font-stretch: 75% 125%;
+  font-family: "General Sans";
+  src: url("/font/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Merged Charter into one family so bold works naturally */
+@font-face {
+  font-family: "Charter";
+  src: url("/font/charter_regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Charter";
+  src: url("/font/charter_bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 
 @theme {
   --font-sans:
-    "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "General Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Charter", Georgia, Cambria, "Times New Roman", Times, serif;
 }
+
+/* --- Global Styles --- */
 
 #__nuxt,
 body {
-  color: var(--color-zinc-500);
+  font-family: var(--font-serif); /* Body is Serif */
+  color: var(--color-zinc-600);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Makes custom fonts look sharper */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -28,11 +51,15 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-sans); /* Headlines are Sans */
   color: var(--color-zinc-800);
+  font-weight: 600; /* Default weight for headlines */
 }
 
+/* --- Utilities --- */
+
 .full-width {
-  width: 100dvw; /* dynamic viewport width - excludes scrollbar */
+  width: 100dvw;
   margin-inline: calc(50% - 50dvw);
   scrollbar-width: none;
 

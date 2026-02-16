@@ -1,10 +1,10 @@
 <template>
-  <main class="top-padding max-w-[75ch]">
+  <main class="top-padding max-w-[80ch]">
     <NuxtImg
       :src="imageUrl"
       alt="Remote image"
-      width="600"
-      height="600"
+      width="736"
+      height="736"
       class="my-outline aspect-square size-16 rounded-full bg-cover bg-clip-border"
     />
 
@@ -12,7 +12,7 @@
       Building apps, launching ideas, and chasing PRs.
     </h1>
 
-    <p class="mt-4 text-base">
+    <p class="mt-3 text-lg md:mt-4">
       I&#8217;m Khaldoon, software developer by trade, an entrepreneur by
       necessity, and an amateur athlete by choice. I spend most of my time
       building Bananabread, a social space for real photos and actual friends.
@@ -39,8 +39,7 @@
 </template>
 
 <script setup lang="ts">
-  const imageUrl =
-    "https://images.unsplash.com/photo-1671639334426-e27d616492f7?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  import imageUrl from "/assets/profile_picture.png";
 
   const socials = [
     {

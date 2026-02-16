@@ -1,7 +1,8 @@
 <template>
   <div
-    class="my-container min-h-screen border-r border-l border-zinc-950/10 shadow-xs"
+    class="my-container grid min-h-screen grid-rows-[auto_1fr_auto] border-r border-l border-zinc-950/10 shadow-xs"
   >
+    <div />
     <NuxtRouteAnnouncer />
     <NuxtPage />
     <PrimaryFooter />
